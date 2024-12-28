@@ -1,10 +1,14 @@
+import json
+from avro.schema import Parse
+
 from confluent_kafka import  Consumer, KafkaError
 
 from utils.avro_services import deserialize_avro
 
 
 
-def consume_messages(topic,schema, kafka_config):
+def consume_messages(topic,schema_json, kafka_config):
+    schema = Parse(json.dumps(schema_json)) #convertendo o json em avro
     consumer = Consumer(kafka_config)
     consumer.subscribe([topic])
     try:
