@@ -1,38 +1,18 @@
-import random
-import uuid
-from dotenv import load_dotenv
+import json
 import os
+from dotenv import load_dotenv
 from utils.producer_service import produce_message
 
-
-FINANCEIAL_SCHEMA = {
-    "type": "record",
-    "name": "financial",
-    "fields": [
-        {"name": "code", "type": "string"},
-        {"name": "status", "type": "string"},
-        {"name": "totalPrice", "type": "string"},
-    ],
-}
-KAFKA_CONFIG = {
-    "bootstrap.servers": "localhost:29092",
-    "group.id": "financial-service-consumer",
-    "auto.offset.reset": "earliest",
-}
+def load_schema(schema_path):
+    with open(schema_path, 'r') as f:
+        schema = json.load(f)
+    return schema
 
 
-def start_financial_producer():
+def start_financial_producer(message_financial):
     load_dotenv()
     topic = os.getenv("TOPIC_FINANCIAL_REQUEST")
+    schema = load_schema("utils/schemas/financial_request_schema.json")
+    bootstrap_servers = os.getenv("BOOTSTRAP_SERVERS")
     
-    message = {
-        "code": str(uuid.uuid4()), 
-        "status": "SOLICITACAO",
-        "totalPrice": str(
-            round(random.uniform(0.01, 100.00), 2)
-        ),  
-    }
-    # def produce_to_financial(topic, message):
-    bootstrap_servers = "localhost:29092"
-
-    produce_message(topic, None, message, FINANCEIAL_SCHEMA, bootstrap_servers)
+    produce_message(topic, None, message_financial, schema, bootstrap_servers)

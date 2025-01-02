@@ -1,32 +1,17 @@
-
+import json
+from services.financial_service import process_financial_request
 from utils.consumer_service import consume_messages
 
+def load_schema(schema_path):
+    with open(schema_path, 'r') as f:
+        schema = json.load(f)
+    return schema
 
 
 def start_order_consumer():
-    schema = {
-        "type": "record",
-        "name": "Order",
-        "fields": [
-            {"name": "orderId", "type": "string"},
-            {
-                "name": "items",
-                "type": {
-                    "type": "array",
-                    "items": {
-                        "type": "record",
-                        "name": "OrderItem",
-                        "fields": [
-                            {"name": "name", "type": "string"},
-                            {"name": "brand", "type": "string"},
-                            {"name": "quantity", "type": "double"},
-                        ],
-                    },
-                },
-            },
-            {"name": "timestamp", "type": "string"},
-        ],
-    }
- 
-
-    consume_messages("TOPIC_ORDER", schema)
+    schema = load_schema("utils/schemas/order_schema.json")
+    
+    while True:
+        message = consume_messages("TOPIC_ORDER", schema)
+        if message:
+            yield process_financial_request(message)
