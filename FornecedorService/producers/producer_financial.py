@@ -1,5 +1,7 @@
 import random
 import uuid
+from dotenv import load_dotenv
+import os
 from utils.producer_service import produce_message
 
 
@@ -17,12 +19,12 @@ KAFKA_CONFIG = {
     "group.id": "financial-service-consumer",
     "auto.offset.reset": "earliest",
 }
-# key = "pedido_654"
 
 
 def start_financial_producer():
-    topic = "teste-api_003"
-
+    load_dotenv()
+    topic = os.getenv("TOPIC_FINANCIAL_REQUEST")
+    
     message = {
         "code": str(uuid.uuid4()), 
         "status": "SOLICITACAO",
