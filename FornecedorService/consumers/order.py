@@ -1,6 +1,6 @@
 import json
 from services.financial_service import process_financial_request
-from utils.consumer_service import consume_messages
+from services.consumer import consume_messages
 
 def load_schema(schema_path):
     with open(schema_path, 'r') as f:

@@ -1,4 +1,4 @@
-from utils.consumer_service import consume_messages
+from services.consumer import consume_messages
 
 
 def start_financial_consumer():

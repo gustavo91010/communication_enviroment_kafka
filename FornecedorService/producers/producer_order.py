@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 import os
-from utils.producer_service import produce_message
+from services.producer import produce_message
 
 
 FINANCEIAL_SCHEMA = {
