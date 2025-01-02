@@ -1,13 +1,9 @@
-from dotenv import load_dotenv
-import os
 
 from utils.consumer_service import consume_messages
 
-load_dotenv()
 
 
 def start_order_consumer():
-    topic = os.getenv("TOPIC_ORDER")
     schema = {
         "type": "record",
         "name": "Order",
@@ -31,10 +27,6 @@ def start_order_consumer():
             {"name": "timestamp", "type": "string"},
         ],
     }
-    config = {
-        "bootstrap.servers": "localhost:29092",
-        "group.id": "fornecedor-service-consumer",
-        "auto.offset.reset": "earliest",
-    }
+ 
 
-    consume_messages(topic, schema, config)
+    consume_messages("TOPIC_ORDER", schema)

@@ -1,15 +1,24 @@
 import json
+import os
+from dotenv import load_dotenv
 from avro.schema import Parse
-from confluent_kafka import  Consumer, KafkaError
+from confluent_kafka import Consumer, KafkaError
 from utils.avro_services import deserialize_avro
 
 
+load_dotenv()
+kafka_config = {
+    "bootstrap.servers": os.getenv("BOOTSTRAP_SERVERS"),
+    "group.id": os.getenv("GROUP_ID"),
+    "auto.offset.reset": os.getenv("AUTO_OFFSET_RESET"),
+}
 
-def consume_messages(topic, schema_json, kafka_config):
+
+def consume_messages(topic, schema_json):
     schema = Parse(json.dumps(schema_json))  # Convertendo o JSON em Avro
-    
+
     consumer = Consumer(kafka_config)
-    consumer.subscribe([topic])
+    consumer.subscribe([os.getenv(topic)])
     try:
         while True:
             msg = consumer.poll(1.0)
