@@ -17,9 +17,3 @@ def process_financial_request(message):
     message["totalPrice"] = round(totalPrice, 2)
 
     start_financial_producer(message)
-    # return message
-
-
-# if __name__ == "__main__":
-#     for order in start_order_consumer():
-#         process_financial_request(order)

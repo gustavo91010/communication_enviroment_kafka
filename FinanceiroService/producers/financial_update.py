@@ -10,7 +10,6 @@ def load_schema(schema_path):
 
 
 def start_financial_producer(message_financial):
-    print(message_financial)
     load_dotenv()
     topic = os.getenv("TOPIC_FINANCIAL_UPDATE")
     schema = load_schema("utils/schemas/financial_update_schema.json")

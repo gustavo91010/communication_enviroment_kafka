@@ -5,7 +5,7 @@ from producers.financial_update import start_financial_producer
 
 def process_financial_update(message):
 
-    status= "reproved" if random.random() <= 0.95 else "aproved"
+    status= "reproved" if random.random() <= 0.35 else "aproved"
 
     message = {
         "code": message["code"],
