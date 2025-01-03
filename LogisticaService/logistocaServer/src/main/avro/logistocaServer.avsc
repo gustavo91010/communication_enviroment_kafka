@@ -1,0 +1,27 @@
+{
+    "type": "record",
+    "name": "LogisticUpdated",
+    "namespace": "com.ajudaqui.logistocaServer.kafka.entity",
+    "fields": [
+        {
+            "name": "code",
+            "type": "string"
+        },
+        {
+            "name": "departureDate",
+            "type": "string"
+        },
+        {
+            "name": "estimatedArrivalDate",
+            "type": "string"
+        },
+        {
+            "name": "trackingCode",
+            "type": "string"
+        },
+        {
+            "name": "timestamp",
+            "type": "string"
+        }
+    ]
+}

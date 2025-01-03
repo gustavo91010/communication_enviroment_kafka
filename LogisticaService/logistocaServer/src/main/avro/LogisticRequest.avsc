@@ -1,0 +1,27 @@
+{
+    "type": "record",
+    "name": "LogisticRequest",
+    "namespace": "com.ajudaqui.logistocaServer.kafka.entity",
+    "fields": [
+      {
+        "name": "code",
+        "type": "string"
+      },
+      {
+        "name": "volume",
+        "type": "double"
+      },
+      {
+        "name": "weight",
+        "type": "double"
+      },
+      {
+        "name": "destination",
+        "type": "string"
+      },
+      {
+        "name": "timestamp",
+        "type": "string"
+      }
+    ]
+  }

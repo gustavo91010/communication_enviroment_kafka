@@ -1,0 +1,19 @@
+{
+    "type": "record",
+    "name": "ClosingUpdate",
+    "namespace": "com.ajudaqui.logistocaServer.kafka.entity",
+    "fields": [
+      {
+        "name": "code",
+        "type": "string"
+      },
+      {
+        "name": "status",
+        "type": "string"
+      },
+      {
+        "name": "timestamp",
+        "type": "string"
+      }
+    ]
+  }
