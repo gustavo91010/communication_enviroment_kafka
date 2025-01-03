@@ -71,7 +71,7 @@
         <dependency>
             <groupId>io.confluent</groupId>
             <artifactId>kafka-avro-serializer</artifactId>
-            <version>5.5.0</version>
+            <version>7.4.0</version>
         </dependency>
 
         <dependency>
@@ -79,7 +79,13 @@
             <artifactId>avro</artifactId>
             <version>1.10.0</version>
         </dependency>
-
+        <!-- Remova esta dependência
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+-->
     </dependencies>
 
     <build>
