@@ -7,8 +7,8 @@ import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.kafka.core.ProducerFactory
 
 @Configuration
-class LogisticProducerConfig {
+class ProducerConfig {
     @Bean
-    fun pessoaDTOTemplate(factor: ProducerFactory<String, LogisticRequest>): KafkaTemplate<String, LogisticRequest> =
+    fun <K, V> template(factor: ProducerFactory<K, V>): KafkaTemplate<K, V> =
         KafkaTemplate(factor)
 }

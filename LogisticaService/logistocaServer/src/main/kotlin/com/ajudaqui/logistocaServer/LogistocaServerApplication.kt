@@ -1,7 +1,9 @@
 package com.ajudaqui.logistocaServer
 
-import com.ajudaqui.logistocaServer.kafka.producer.LogisticProducerImp
-import com.ajudaqui.logistocaServer.kafka.producer.LogisticRequestDTO
+import com.ajudaqui.logistocaServer.kafka.producer.ProducerImp
+import com.ajudaqui.logistocaServer.kafka.dto.LogisticRequestDTO
+import com.ajudaqui.logistocaServer.kafka.entity.LogisticRequest
+import com.ajudaqui.logistocaServer.service.LogisticRequestService
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -9,7 +11,7 @@ import org.springframework.boot.runApplication
 import java.util.UUID
 
 @SpringBootApplication
-class LogistocaServerApplication(val lalala: LogisticProducerImp) : ApplicationRunner {
+class LogistocaServerApplication(val lalala: LogisticRequestService) : ApplicationRunner {
     override fun run(args: ApplicationArguments?) {
         val payload = LogisticRequestDTO(
             code = UUID.randomUUID().toString(),
