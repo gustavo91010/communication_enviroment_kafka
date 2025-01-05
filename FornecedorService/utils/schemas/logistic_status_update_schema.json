@@ -1,0 +1,26 @@
+{
+    "type": "record",
+    "name": "LogisticUpdated",
+    "fields": [
+        {
+            "name": "code",
+            "type": "string"
+        },
+        {
+            "name": "departureDate",
+            "type": "string"
+        },
+        {
+            "name": "estimatedArrivalDate",
+            "type": "string"
+        },
+        {
+            "name": "trackingCode",
+            "type": "string"
+        },
+        {
+            "name": "timestamp",
+            "type": "string"
+        }
+    ]
+}

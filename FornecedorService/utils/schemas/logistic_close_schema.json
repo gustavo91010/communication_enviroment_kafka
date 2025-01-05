@@ -1,0 +1,19 @@
+{
+    "type": "record",
+    "name": "ClosingUpdate",
+    "fields": [
+      {
+        "name": "code",
+        "type": "string"
+      },
+      {
+        "name": "status",
+        "type": "string"
+      },
+      {
+        "name": "timestamp",
+        "type": "string"
+      }
+    ]
+  }
+  

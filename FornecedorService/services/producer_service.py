@@ -1,8 +1,10 @@
 import random
 from producers.producer_financial import start_financial_producer
+from datetime import datetime
 
 
-def process_financial_request(message):
+
+def build_message_financial_request(message):
     message["status"] = "processed"
 
     totalPrice = 0  
@@ -15,5 +17,16 @@ def process_financial_request(message):
         totalPrice += item["totalPrice"]
 
     message["totalPrice"] = round(totalPrice, 2)
+    return message
 
-    start_financial_producer(message)
+
+def build_message_logistc_request(message):
+    message["timestamp"]= datetime.now().isoformat()
+    message["volume"]=random.randint(50, 100)
+    message["weight"]=round(random.uniform(10.01, 20.00), 2)
+    message["destination"]="rua lalala dos santos, UF: BO"
+    
+    message.pop("status", None)
+    
+    return message
+ 

@@ -1,0 +1,28 @@
+{
+    "type": "record",
+    "name": "LogisticRequest",
+    "fields": [
+      {
+        "name": "code",
+        "type": "string"
+      },
+     
+      {
+        "name": "volume",
+        "type": "double"
+      },
+      {
+        "name": "weight",
+        "type": "double"
+      },
+      {
+        "name": "destination",
+        "type": "string"
+      },
+      {
+        "name": "timestamp",
+        "type": "string"
+      }
+    ]
+  }
+  

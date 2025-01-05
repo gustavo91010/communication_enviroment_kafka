@@ -31,7 +31,11 @@ def consume_messages(topic, schema_json):
 
             try:
                 avro_data = deserialize_avro(msg.value(), schema)
-                # print(f"Mensagem recebida (Avro): {avro_data}")
+                print(f"Mensagem recebida do tópico: {topic}")
+                print(f"Code: {msg.value()['code']}")
+                
+                print(json.dumps(msg.value(), indent=4))
+
                 return avro_data
             except Exception as e:
                 print(f"Erro ao desserializar a mensagem: {e}")
