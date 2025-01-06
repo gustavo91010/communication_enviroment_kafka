@@ -26,7 +26,7 @@ def _close_logistic_consumer():
 
 
 if __name__ == "__main__":
-    
+
     order_thread = threading.Thread(target=_start_order_consumer)
     logistic_thread = threading.Thread(target=_update_financial_consumer)
     budget_thread = threading.Thread(target=_update_logistic_consumer)

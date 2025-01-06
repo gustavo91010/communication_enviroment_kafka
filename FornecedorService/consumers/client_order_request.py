@@ -1,5 +1,4 @@
 import json
-import os
 from dotenv import load_dotenv
 from consumers._consumer import consume_messages
 from producers.producer_financial import start_financial_producer
@@ -14,10 +13,9 @@ def load_schema(schema_path):
 def start_order_consumer():
     load_dotenv()
     schema = load_schema("utils/schemas/order_schema.json")
-    topic = os.getenv("TOPIC_FINANCIAL_UPDATE")
 
     while True:
-        client_order = consume_messages(topic, schema)
+        client_order = consume_messages("TOPIC_ORDER", schema)
         if client_order:
             request_financial =build_message_financial_request(client_order)
             yield start_financial_producer(request_financial)
