@@ -16,6 +16,9 @@ def start_order_consumer():
 
     while True:
         client_order = consume_messages("TOPIC_ORDER", schema)
-        if client_order:
-            request_financial =build_message_financial_request(client_order)
-            yield start_financial_producer(request_financial)
+        if not client_order or client_order.get('code') == '':
+            print("mensagem veio vazia... passa não, olha ela ai: client_order")
+            continue        
+        request_financial =build_message_financial_request(client_order)
+        yield start_financial_producer(request_financial)
+        print(client_order)
