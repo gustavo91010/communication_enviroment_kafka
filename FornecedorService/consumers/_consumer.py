@@ -35,8 +35,9 @@ def consume_messages(topic, schema_json):
             try:
                 avro_data = deserialize_avro(msg.value(), schema)
                 print(f"Mensagem recebida do tópico: {topic}")
-                print(f"Code: {avro_data['code']}")
-                print(json.dumps(avro_data, indent=4))
+                # print(f"Code: {avro_data['code']}")
+                # print(json.dumps(avro_data, indent=4))
+                print(json.dumps(avro_data, ensure_ascii=False, indent=4))
 
                 return avro_data
             except Exception as e:
