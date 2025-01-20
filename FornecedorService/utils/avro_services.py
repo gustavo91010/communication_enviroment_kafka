@@ -1,12 +1,12 @@
 import io
 import json
-from avro.schema import Parse
+from avro.schema import parse
 from avro.io import DatumWriter, DatumReader, BinaryEncoder, BinaryDecoder
 
 
 def serialize_avro(data, json_schema):
     schema_json = json.dumps(json_schema)
-    schema = Parse(schema_json)
+    schema = parse(schema_json)
     writer = DatumWriter(schema)
     bytes_io = io.BytesIO()
     encoder = BinaryEncoder(bytes_io)

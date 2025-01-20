@@ -3,7 +3,7 @@ from confluent_kafka import Producer, KafkaException
 from dotenv import load_dotenv
 from utils.avro_services import serialize_avro
 from avro.io import BinaryEncoder, DatumWriter
-from avro.schema import Parse
+from avro.schema import parse
 import json
 
 
@@ -35,7 +35,7 @@ def produce_message(topic, key, value, schema_path, bootstrap_servers):
 
 def validate_messgae_with_schema(message, schema_path):
     with open(schema_path, 'r') as f:
-        schema = Parse(json.dumps(json.load(f)))
+        schema = parse(json.dumps(json.load(f)))
     try:
         writer = DatumWriter(schema)
         bytes_writer = BytesIO()

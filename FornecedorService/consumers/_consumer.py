@@ -1,7 +1,7 @@
 import json
 import os
 from dotenv import load_dotenv
-from avro.schema import Parse
+from avro.schema import parse
 from confluent_kafka import Consumer, KafkaError
 from utils.avro_services import deserialize_avro
 
@@ -16,7 +16,7 @@ kafka_config = {
 
 def consume_messages(topic, schema_json):
     load_dotenv()
-    schema = Parse(json.dumps(schema_json))  # Convertendo o JSON em Avro
+    schema = parse(json.dumps(schema_json))  # Convertendo o JSON em Avro
     consumer = Consumer(kafka_config)
     consumer.subscribe([os.getenv(topic)])
     try:
@@ -49,7 +49,7 @@ def consume_messages(topic, schema_json):
         consumer.close()
 # def consume_messages(topic, schema_json):
 #     load_dotenv()
-#     schema = Parse(json.dumps(schema_json))  # Convertendo o JSON em Avro
+#     schema = parse(json.dumps(schema_json))  # Convertendo o JSON em Avro
 #     consumer = Consumer(kafka_config)
 #     consumer.subscribe([os.getenv(topic)])
 #     try:
