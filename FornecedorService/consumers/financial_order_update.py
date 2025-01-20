@@ -17,7 +17,7 @@ def update_financial_consumer():
     schema = load_schema("utils/schemas/financial_order_update_schema.json")
 
     while True:
-        financial_update = consume_messages("TOPIC_FINANCIAL_UPDATE", schema)
+        financial_update = consume_messages("TOPIC_FINANCIAL_UPDAT", schema)
         if financial_update:
             message_logistc_producer=  build_message_logistc_request(financial_update)
             yield start_logistic_producer(message_logistc_producer)
