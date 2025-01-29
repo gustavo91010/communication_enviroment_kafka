@@ -3,8 +3,8 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-
 package com.ajudaqui.FornecedorService.avro;
+
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
@@ -12,23 +12,23 @@ import org.apache.avro.message.SchemaStore;
 
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
-public class Order extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+public class Order_2 extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 2124511609609070303L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Order\",\"fields\":[{\"name\":\"orderId\",\"type\":\"string\"},{\"name\":\"items\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrderItem\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"brand\",\"type\":\"string\"},{\"name\":\"quantity\",\"type\":\"double\"}]}}},{\"name\":\"timestamp\",\"type\":\"string\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
 
-  private static final BinaryMessageEncoder<Order> ENCODER =
-      new BinaryMessageEncoder<Order>(MODEL$, SCHEMA$);
+  private static final BinaryMessageEncoder<Order_2> ENCODER =
+      new BinaryMessageEncoder<Order_2>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<Order> DECODER =
-      new BinaryMessageDecoder<Order>(MODEL$, SCHEMA$);
+  private static final BinaryMessageDecoder<Order_2> DECODER =
+      new BinaryMessageDecoder<Order_2>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageDecoder instance used by this class.
    */
-  public static BinaryMessageDecoder<Order> getDecoder() {
+  public static BinaryMessageDecoder<Order_2> getDecoder() {
     return DECODER;
   }
 
@@ -36,8 +36,8 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
    * Create a new BinaryMessageDecoder instance for this class that uses the specified {@link SchemaStore}.
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    */
-  public static BinaryMessageDecoder<Order> createDecoder(SchemaStore resolver) {
-    return new BinaryMessageDecoder<Order>(MODEL$, SCHEMA$, resolver);
+  public static BinaryMessageDecoder<Order_2> createDecoder(SchemaStore resolver) {
+    return new BinaryMessageDecoder<Order_2>(MODEL$, SCHEMA$, resolver);
   }
 
   /** Serializes this Order to a ByteBuffer. */
@@ -46,13 +46,13 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
   }
 
   /** Deserializes a Order from a ByteBuffer. */
-  public static Order fromByteBuffer(
+  public static Order_2 fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
 
   @Deprecated public java.lang.CharSequence orderId;
-  @Deprecated public java.util.List<OrderItem> items;
+  @Deprecated public java.util.List<OrderItem_2> items;
   @Deprecated public java.lang.CharSequence timestamp;
 
   /**
@@ -60,7 +60,7 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public Order() {}
+  public Order_2() {}
 
   /**
    * All-args constructor.
@@ -68,7 +68,7 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
    * @param items The new value for items
    * @param timestamp The new value for timestamp
    */
-  public Order(java.lang.CharSequence orderId, java.util.List<OrderItem> items, java.lang.CharSequence timestamp) {
+  public Order_2(java.lang.CharSequence orderId, java.util.List<OrderItem_2> items, java.lang.CharSequence timestamp) {
     this.orderId = orderId;
     this.items = items;
     this.timestamp = timestamp;
@@ -90,7 +90,7 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: orderId = (java.lang.CharSequence)value$; break;
-    case 1: items = (java.util.List<OrderItem>)value$; break;
+    case 1: items = (java.util.List<OrderItem_2>)value$; break;
     case 2: timestamp = (java.lang.CharSequence)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -116,7 +116,7 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
    * Gets the value of the 'items' field.
    * @return The value of the 'items' field.
    */
-  public java.util.List<OrderItem> getItems() {
+  public java.util.List<OrderItem_2> getItems() {
     return items;
   }
 
@@ -124,7 +124,7 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
    * Sets the value of the 'items' field.
    * @param value the value to set.
    */
-  public void setItems(java.util.List<OrderItem> value) {
+  public void setItems(java.util.List<OrderItem_2> value) {
     this.items = value;
   }
 
@@ -148,8 +148,8 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
    * Creates a new Order RecordBuilder.
    * @return A new Order RecordBuilder
    */
-  public static Order.Builder newBuilder() {
-    return new Order.Builder();
+  public static Order_2.Builder newBuilder() {
+    return new Order_2.Builder();
   }
 
   /**
@@ -157,8 +157,8 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
    * @param other The existing builder to copy.
    * @return A new Order RecordBuilder
    */
-  public static Order.Builder newBuilder(Order.Builder other) {
-    return new Order.Builder(other);
+  public static Order_2.Builder newBuilder(Order_2.Builder other) {
+    return new Order_2.Builder(other);
   }
 
   /**
@@ -166,18 +166,18 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
    * @param other The existing instance to copy.
    * @return A new Order RecordBuilder
    */
-  public static Order.Builder newBuilder(Order other) {
-    return new Order.Builder(other);
+  public static Order_2.Builder newBuilder(Order_2 other) {
+    return new Order_2.Builder(other);
   }
 
   /**
    * RecordBuilder for Order instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Order>
-    implements org.apache.avro.data.RecordBuilder<Order> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Order_2>
+    implements org.apache.avro.data.RecordBuilder<Order_2> {
 
     private java.lang.CharSequence orderId;
-    private java.util.List<OrderItem> items;
+    private java.util.List<OrderItem_2> items;
     private java.lang.CharSequence timestamp;
 
     /** Creates a new Builder */
@@ -189,7 +189,7 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(Order.Builder other) {
+    private Builder(Order_2.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.orderId)) {
         this.orderId = data().deepCopy(fields()[0].schema(), other.orderId);
@@ -209,7 +209,7 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
      * Creates a Builder by copying an existing Order instance
      * @param other The existing instance to copy.
      */
-    private Builder(Order other) {
+    private Builder(Order_2 other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.orderId)) {
         this.orderId = data().deepCopy(fields()[0].schema(), other.orderId);
@@ -238,7 +238,7 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'orderId'.
       * @return This builder.
       */
-    public Order.Builder setOrderId(java.lang.CharSequence value) {
+    public Order_2.Builder setOrderId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.orderId = value;
       fieldSetFlags()[0] = true;
@@ -258,7 +258,7 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
       * Clears the value of the 'orderId' field.
       * @return This builder.
       */
-    public Order.Builder clearOrderId() {
+    public Order_2.Builder clearOrderId() {
       orderId = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -268,7 +268,7 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
       * Gets the value of the 'items' field.
       * @return The value.
       */
-    public java.util.List<OrderItem> getItems() {
+    public java.util.List<OrderItem_2> getItems() {
       return items;
     }
 
@@ -277,7 +277,7 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'items'.
       * @return This builder.
       */
-    public Order.Builder setItems(java.util.List<OrderItem> value) {
+    public Order_2.Builder setItems(java.util.List<OrderItem_2> value) {
       validate(fields()[1], value);
       this.items = value;
       fieldSetFlags()[1] = true;
@@ -297,7 +297,7 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
       * Clears the value of the 'items' field.
       * @return This builder.
       */
-    public Order.Builder clearItems() {
+    public Order_2.Builder clearItems() {
       items = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -316,7 +316,7 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'timestamp'.
       * @return This builder.
       */
-    public Order.Builder setTimestamp(java.lang.CharSequence value) {
+    public Order_2.Builder setTimestamp(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.timestamp = value;
       fieldSetFlags()[2] = true;
@@ -336,7 +336,7 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
       * Clears the value of the 'timestamp' field.
       * @return This builder.
       */
-    public Order.Builder clearTimestamp() {
+    public Order_2.Builder clearTimestamp() {
       timestamp = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -344,11 +344,11 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
 
     @Override
     @SuppressWarnings("unchecked")
-    public Order build() {
+    public Order_2 build() {
       try {
-        Order record = new Order();
+        Order_2 record = new Order_2();
         record.orderId = fieldSetFlags()[0] ? this.orderId : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.items = fieldSetFlags()[1] ? this.items : (java.util.List<OrderItem>) defaultValue(fields()[1]);
+        record.items = fieldSetFlags()[1] ? this.items : (java.util.List<OrderItem_2>) defaultValue(fields()[1]);
         record.timestamp = fieldSetFlags()[2] ? this.timestamp : (java.lang.CharSequence) defaultValue(fields()[2]);
         return record;
       } catch (java.lang.Exception e) {
@@ -358,8 +358,8 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<Order>
-    WRITER$ = (org.apache.avro.io.DatumWriter<Order>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<Order_2>
+    WRITER$ = (org.apache.avro.io.DatumWriter<Order_2>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -367,8 +367,8 @@ public class Order extends org.apache.avro.specific.SpecificRecordBase implement
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<Order>
-    READER$ = (org.apache.avro.io.DatumReader<Order>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<Order_2>
+    READER$ = (org.apache.avro.io.DatumReader<Order_2>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {

@@ -1,5 +1,6 @@
-   {
+{
   "type": "record",
+  "namespace": "com.ajudaqui.FornecedorService.avro",
   "name": "Order",
   "fields": [
     {
@@ -12,6 +13,7 @@
         "type": "array",
         "items": {
           "type": "record",
+          "namespace": "com.ajudaqui.FornecedorService.avro",
           "name": "OrderItem",
           "fields": [
             {

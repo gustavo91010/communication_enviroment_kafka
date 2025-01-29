@@ -3,6 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
+package com.ajudaqui.FornecedorService.avro;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.message.BinaryMessageEncoder;
@@ -11,23 +12,23 @@ import org.apache.avro.message.SchemaStore;
 
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
-public class OrderItem extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+public class OrderItem_2 extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -1428291475117352675L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OrderItem\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"brand\",\"type\":\"string\"},{\"name\":\"quantity\",\"type\":\"double\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
 
-  private static final BinaryMessageEncoder<OrderItem> ENCODER =
-      new BinaryMessageEncoder<OrderItem>(MODEL$, SCHEMA$);
+  private static final BinaryMessageEncoder<OrderItem_2> ENCODER =
+      new BinaryMessageEncoder<OrderItem_2>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<OrderItem> DECODER =
-      new BinaryMessageDecoder<OrderItem>(MODEL$, SCHEMA$);
+  private static final BinaryMessageDecoder<OrderItem_2> DECODER =
+      new BinaryMessageDecoder<OrderItem_2>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageDecoder instance used by this class.
    */
-  public static BinaryMessageDecoder<OrderItem> getDecoder() {
+  public static BinaryMessageDecoder<OrderItem_2> getDecoder() {
     return DECODER;
   }
 
@@ -35,8 +36,8 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
    * Create a new BinaryMessageDecoder instance for this class that uses the specified {@link SchemaStore}.
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    */
-  public static BinaryMessageDecoder<OrderItem> createDecoder(SchemaStore resolver) {
-    return new BinaryMessageDecoder<OrderItem>(MODEL$, SCHEMA$, resolver);
+  public static BinaryMessageDecoder<OrderItem_2> createDecoder(SchemaStore resolver) {
+    return new BinaryMessageDecoder<OrderItem_2>(MODEL$, SCHEMA$, resolver);
   }
 
   /** Serializes this OrderItem to a ByteBuffer. */
@@ -45,7 +46,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
   }
 
   /** Deserializes a OrderItem from a ByteBuffer. */
-  public static OrderItem fromByteBuffer(
+  public static OrderItem_2 fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
@@ -59,7 +60,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public OrderItem() {}
+  public OrderItem_2() {}
 
   /**
    * All-args constructor.
@@ -67,7 +68,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
    * @param brand The new value for brand
    * @param quantity The new value for quantity
    */
-  public OrderItem(java.lang.CharSequence name, java.lang.CharSequence brand, java.lang.Double quantity) {
+  public OrderItem_2(java.lang.CharSequence name, java.lang.CharSequence brand, java.lang.Double quantity) {
     this.name = name;
     this.brand = brand;
     this.quantity = quantity;
@@ -147,8 +148,8 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
    * Creates a new OrderItem RecordBuilder.
    * @return A new OrderItem RecordBuilder
    */
-  public static OrderItem.Builder newBuilder() {
-    return new OrderItem.Builder();
+  public static OrderItem_2.Builder newBuilder() {
+    return new OrderItem_2.Builder();
   }
 
   /**
@@ -156,8 +157,8 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing builder to copy.
    * @return A new OrderItem RecordBuilder
    */
-  public static OrderItem.Builder newBuilder(OrderItem.Builder other) {
-    return new OrderItem.Builder(other);
+  public static OrderItem_2.Builder newBuilder(OrderItem_2.Builder other) {
+    return new OrderItem_2.Builder(other);
   }
 
   /**
@@ -165,15 +166,15 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing instance to copy.
    * @return A new OrderItem RecordBuilder
    */
-  public static OrderItem.Builder newBuilder(OrderItem other) {
-    return new OrderItem.Builder(other);
+  public static OrderItem_2.Builder newBuilder(OrderItem_2 other) {
+    return new OrderItem_2.Builder(other);
   }
 
   /**
    * RecordBuilder for OrderItem instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<OrderItem>
-    implements org.apache.avro.data.RecordBuilder<OrderItem> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<OrderItem_2>
+    implements org.apache.avro.data.RecordBuilder<OrderItem_2> {
 
     private java.lang.CharSequence name;
     private java.lang.CharSequence brand;
@@ -188,7 +189,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(OrderItem.Builder other) {
+    private Builder(OrderItem_2.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.name)) {
         this.name = data().deepCopy(fields()[0].schema(), other.name);
@@ -208,7 +209,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
      * Creates a Builder by copying an existing OrderItem instance
      * @param other The existing instance to copy.
      */
-    private Builder(OrderItem other) {
+    private Builder(OrderItem_2 other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.name)) {
         this.name = data().deepCopy(fields()[0].schema(), other.name);
@@ -237,7 +238,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'name'.
       * @return This builder.
       */
-    public OrderItem.Builder setName(java.lang.CharSequence value) {
+    public OrderItem_2.Builder setName(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.name = value;
       fieldSetFlags()[0] = true;
@@ -257,7 +258,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
       * Clears the value of the 'name' field.
       * @return This builder.
       */
-    public OrderItem.Builder clearName() {
+    public OrderItem_2.Builder clearName() {
       name = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -276,7 +277,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'brand'.
       * @return This builder.
       */
-    public OrderItem.Builder setBrand(java.lang.CharSequence value) {
+    public OrderItem_2.Builder setBrand(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.brand = value;
       fieldSetFlags()[1] = true;
@@ -296,7 +297,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
       * Clears the value of the 'brand' field.
       * @return This builder.
       */
-    public OrderItem.Builder clearBrand() {
+    public OrderItem_2.Builder clearBrand() {
       brand = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -315,7 +316,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'quantity'.
       * @return This builder.
       */
-    public OrderItem.Builder setQuantity(double value) {
+    public OrderItem_2.Builder setQuantity(double value) {
       validate(fields()[2], value);
       this.quantity = value;
       fieldSetFlags()[2] = true;
@@ -335,16 +336,16 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
       * Clears the value of the 'quantity' field.
       * @return This builder.
       */
-    public OrderItem.Builder clearQuantity() {
+    public OrderItem_2.Builder clearQuantity() {
       fieldSetFlags()[2] = false;
       return this;
     }
 
     @Override
     @SuppressWarnings("unchecked")
-    public OrderItem build() {
+    public OrderItem_2 build() {
       try {
-        OrderItem record = new OrderItem();
+        OrderItem_2 record = new OrderItem_2();
         record.name = fieldSetFlags()[0] ? this.name : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.brand = fieldSetFlags()[1] ? this.brand : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.quantity = fieldSetFlags()[2] ? this.quantity : (java.lang.Double) defaultValue(fields()[2]);
@@ -356,8 +357,8 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<OrderItem>
-    WRITER$ = (org.apache.avro.io.DatumWriter<OrderItem>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<OrderItem_2>
+    WRITER$ = (org.apache.avro.io.DatumWriter<OrderItem_2>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -365,8 +366,8 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<OrderItem>
-    READER$ = (org.apache.avro.io.DatumReader<OrderItem>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<OrderItem_2>
+    READER$ = (org.apache.avro.io.DatumReader<OrderItem_2>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {
