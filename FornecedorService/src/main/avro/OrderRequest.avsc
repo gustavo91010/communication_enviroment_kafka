@@ -1,0 +1,39 @@
+   {
+  "type": "record",
+  "name": "Order",
+  "fields": [
+    {
+      "name": "orderId",
+      "type": "string"
+    },
+    {
+      "name": "items",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "OrderItem",
+          "fields": [
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "brand",
+              "type": "string"
+            },
+            {
+              "name": "quantity",
+              "type": "double"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "timestamp",
+      "type": "string"
+    }
+  ]
+}
+
