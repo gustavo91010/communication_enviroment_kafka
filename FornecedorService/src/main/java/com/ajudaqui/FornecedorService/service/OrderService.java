@@ -19,7 +19,7 @@ public class OrderService {
     )
     @KafkaListener(topics = "client.order.request", groupId = "fornecedor_01")
     public void consumeOrder(Order order, Acknowledgment acknowledgment) {
-        acknowledgment.acknowledge();
+        acknowledgment.acknowledge();// comitando avisando que recebi a mensagem
         System.out.println("Order recebida com sucesso! " + order);
 
     }
