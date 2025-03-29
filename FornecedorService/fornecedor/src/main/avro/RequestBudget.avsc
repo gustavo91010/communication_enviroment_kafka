@@ -13,7 +13,7 @@
           "type": "array",
           "items": {
             "type": "record",
-            "name": "OrderItem",
+            "name": "BudgetItem",
             "fields": [
               {
                 "name": "name",

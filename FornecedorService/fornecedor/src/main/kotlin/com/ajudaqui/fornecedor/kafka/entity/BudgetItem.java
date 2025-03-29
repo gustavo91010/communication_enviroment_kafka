@@ -13,24 +13,24 @@ import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
-public class OrderItem extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 225165555246739326L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OrderItem\",\"namespace\":\"com.ajudaqui.fornecedor.kafka.entity\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"brand\",\"type\":\"string\"},{\"name\":\"quantity\",\"type\":\"double\"}]}");
+public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  private static final long serialVersionUID = -3042972178581797587L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BudgetItem\",\"namespace\":\"com.ajudaqui.fornecedor.kafka.entity\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"brand\",\"type\":\"string\"},{\"name\":\"quantity\",\"type\":\"double\"},{\"name\":\"unitPrice\",\"type\":\"double\"},{\"name\":\"totalPrice\",\"type\":\"double\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
 
-  private static final BinaryMessageEncoder<OrderItem> ENCODER =
-      new BinaryMessageEncoder<OrderItem>(MODEL$, SCHEMA$);
+  private static final BinaryMessageEncoder<BudgetItem> ENCODER =
+      new BinaryMessageEncoder<BudgetItem>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<OrderItem> DECODER =
-      new BinaryMessageDecoder<OrderItem>(MODEL$, SCHEMA$);
+  private static final BinaryMessageDecoder<BudgetItem> DECODER =
+      new BinaryMessageDecoder<BudgetItem>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageEncoder instance used by this class.
    * @return the message encoder used by this class
    */
-  public static BinaryMessageEncoder<OrderItem> getEncoder() {
+  public static BinaryMessageEncoder<BudgetItem> getEncoder() {
     return ENCODER;
   }
 
@@ -38,7 +38,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
    * Return the BinaryMessageDecoder instance used by this class.
    * @return the message decoder used by this class
    */
-  public static BinaryMessageDecoder<OrderItem> getDecoder() {
+  public static BinaryMessageDecoder<BudgetItem> getDecoder() {
     return DECODER;
   }
 
@@ -47,12 +47,12 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    * @return a BinaryMessageDecoder instance for this class backed by the given SchemaStore
    */
-  public static BinaryMessageDecoder<OrderItem> createDecoder(SchemaStore resolver) {
-    return new BinaryMessageDecoder<OrderItem>(MODEL$, SCHEMA$, resolver);
+  public static BinaryMessageDecoder<BudgetItem> createDecoder(SchemaStore resolver) {
+    return new BinaryMessageDecoder<BudgetItem>(MODEL$, SCHEMA$, resolver);
   }
 
   /**
-   * Serializes this OrderItem to a ByteBuffer.
+   * Serializes this BudgetItem to a ByteBuffer.
    * @return a buffer holding the serialized data for this instance
    * @throws java.io.IOException if this instance could not be serialized
    */
@@ -61,12 +61,12 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
   }
 
   /**
-   * Deserializes a OrderItem from a ByteBuffer.
+   * Deserializes a BudgetItem from a ByteBuffer.
    * @param b a byte buffer holding serialized data for an instance of this class
-   * @return a OrderItem instance decoded from the given buffer
+   * @return a BudgetItem instance decoded from the given buffer
    * @throws java.io.IOException if the given bytes could not be deserialized into an instance of this class
    */
-  public static OrderItem fromByteBuffer(
+  public static BudgetItem fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
@@ -74,24 +74,30 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
    private java.lang.CharSequence name;
    private java.lang.CharSequence brand;
    private double quantity;
+   private double unitPrice;
+   private double totalPrice;
 
   /**
    * Default constructor.  Note that this does not initialize fields
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public OrderItem() {}
+  public BudgetItem() {}
 
   /**
    * All-args constructor.
    * @param name The new value for name
-   * @param bra The new value for brand
+   * @param brand The new value for brand
    * @param quantity The new value for quantity
+   * @param unitPrice The new value for unitPrice
+   * @param totalPrice The new value for totalPrice
    */
-  public OrderItem(java.lang.CharSequence name, java.lang.CharSequence brand, java.lang.Double quantity) {
+  public BudgetItem(java.lang.CharSequence name, java.lang.CharSequence brand, java.lang.Double quantity, java.lang.Double unitPrice, java.lang.Double totalPrice) {
     this.name = name;
     this.brand = brand;
     this.quantity = quantity;
+    this.unitPrice = unitPrice;
+    this.totalPrice = totalPrice;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -102,6 +108,8 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
     case 0: return name;
     case 1: return brand;
     case 2: return quantity;
+    case 3: return unitPrice;
+    case 4: return totalPrice;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -113,6 +121,8 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
     case 0: name = (java.lang.CharSequence)value$; break;
     case 1: brand = (java.lang.CharSequence)value$; break;
     case 2: quantity = (java.lang.Double)value$; break;
+    case 3: unitPrice = (java.lang.Double)value$; break;
+    case 4: totalPrice = (java.lang.Double)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -169,49 +179,85 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
   }
 
   /**
-   * Creates a new OrderItem RecordBuilder.
-   * @return A new OrderItem RecordBuilder
+   * Gets the value of the 'unitPrice' field.
+   * @return The value of the 'unitPrice' field.
    */
-  public static com.ajudaqui.fornecedor.kafka.entity.OrderItem.Builder newBuilder() {
-    return new com.ajudaqui.fornecedor.kafka.entity.OrderItem.Builder();
+  public double getUnitPrice() {
+    return unitPrice;
+  }
+
+
+  /**
+   * Sets the value of the 'unitPrice' field.
+   * @param value the value to set.
+   */
+  public void setUnitPrice(double value) {
+    this.unitPrice = value;
   }
 
   /**
-   * Creates a new OrderItem RecordBuilder by copying an existing Builder.
+   * Gets the value of the 'totalPrice' field.
+   * @return The value of the 'totalPrice' field.
+   */
+  public double getTotalPrice() {
+    return totalPrice;
+  }
+
+
+  /**
+   * Sets the value of the 'totalPrice' field.
+   * @param value the value to set.
+   */
+  public void setTotalPrice(double value) {
+    this.totalPrice = value;
+  }
+
+  /**
+   * Creates a new BudgetItem RecordBuilder.
+   * @return A new BudgetItem RecordBuilder
+   */
+  public static com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder newBuilder() {
+    return new com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder();
+  }
+
+  /**
+   * Creates a new BudgetItem RecordBuilder by copying an existing Builder.
    * @param other The existing builder to copy.
-   * @return A new OrderItem RecordBuilder
+   * @return A new BudgetItem RecordBuilder
    */
-  public static com.ajudaqui.fornecedor.kafka.entity.OrderItem.Builder newBuilder(com.ajudaqui.fornecedor.kafka.entity.OrderItem.Builder other) {
+  public static com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder newBuilder(com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder other) {
     if (other == null) {
-      return new com.ajudaqui.fornecedor.kafka.entity.OrderItem.Builder();
+      return new com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder();
     } else {
-      return new com.ajudaqui.fornecedor.kafka.entity.OrderItem.Builder(other);
+      return new com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder(other);
     }
   }
 
   /**
-   * Creates a new OrderItem RecordBuilder by copying an existing OrderItem instance.
+   * Creates a new BudgetItem RecordBuilder by copying an existing BudgetItem instance.
    * @param other The existing instance to copy.
-   * @return A new OrderItem RecordBuilder
+   * @return A new BudgetItem RecordBuilder
    */
-  public static com.ajudaqui.fornecedor.kafka.entity.OrderItem.Builder newBuilder(com.ajudaqui.fornecedor.kafka.entity.OrderItem other) {
+  public static com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder newBuilder(com.ajudaqui.fornecedor.kafka.entity.BudgetItem other) {
     if (other == null) {
-      return new com.ajudaqui.fornecedor.kafka.entity.OrderItem.Builder();
+      return new com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder();
     } else {
-      return new com.ajudaqui.fornecedor.kafka.entity.OrderItem.Builder(other);
+      return new com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder(other);
     }
   }
 
   /**
-   * RecordBuilder for OrderItem instances.
+   * RecordBuilder for BudgetItem instances.
    */
   @org.apache.avro.specific.AvroGenerated
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<OrderItem>
-    implements org.apache.avro.data.RecordBuilder<OrderItem> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<BudgetItem>
+    implements org.apache.avro.data.RecordBuilder<BudgetItem> {
 
     private java.lang.CharSequence name;
     private java.lang.CharSequence brand;
     private double quantity;
+    private double unitPrice;
+    private double totalPrice;
 
     /** Creates a new Builder */
     private Builder() {
@@ -222,7 +268,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.ajudaqui.fornecedor.kafka.entity.OrderItem.Builder other) {
+    private Builder(com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.name)) {
         this.name = data().deepCopy(fields()[0].schema(), other.name);
@@ -236,13 +282,21 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
         this.quantity = data().deepCopy(fields()[2].schema(), other.quantity);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
+      if (isValidValue(fields()[3], other.unitPrice)) {
+        this.unitPrice = data().deepCopy(fields()[3].schema(), other.unitPrice);
+        fieldSetFlags()[3] = other.fieldSetFlags()[3];
+      }
+      if (isValidValue(fields()[4], other.totalPrice)) {
+        this.totalPrice = data().deepCopy(fields()[4].schema(), other.totalPrice);
+        fieldSetFlags()[4] = other.fieldSetFlags()[4];
+      }
     }
 
     /**
-     * Creates a Builder by copying an existing OrderItem instance
+     * Creates a Builder by copying an existing BudgetItem instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.ajudaqui.fornecedor.kafka.entity.OrderItem other) {
+    private Builder(com.ajudaqui.fornecedor.kafka.entity.BudgetItem other) {
       super(SCHEMA$);
       if (isValidValue(fields()[0], other.name)) {
         this.name = data().deepCopy(fields()[0].schema(), other.name);
@@ -255,6 +309,14 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
       if (isValidValue(fields()[2], other.quantity)) {
         this.quantity = data().deepCopy(fields()[2].schema(), other.quantity);
         fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.unitPrice)) {
+        this.unitPrice = data().deepCopy(fields()[3].schema(), other.unitPrice);
+        fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.totalPrice)) {
+        this.totalPrice = data().deepCopy(fields()[4].schema(), other.totalPrice);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -272,7 +334,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'name'.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.OrderItem.Builder setName(java.lang.CharSequence value) {
+    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder setName(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.name = value;
       fieldSetFlags()[0] = true;
@@ -292,7 +354,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
       * Clears the value of the 'name' field.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.OrderItem.Builder clearName() {
+    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder clearName() {
       name = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -312,7 +374,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'brand'.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.OrderItem.Builder setBrand(java.lang.CharSequence value) {
+    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder setBrand(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.brand = value;
       fieldSetFlags()[1] = true;
@@ -332,7 +394,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
       * Clears the value of the 'brand' field.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.OrderItem.Builder clearBrand() {
+    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder clearBrand() {
       brand = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -352,7 +414,7 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'quantity'.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.OrderItem.Builder setQuantity(double value) {
+    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder setQuantity(double value) {
       validate(fields()[2], value);
       this.quantity = value;
       fieldSetFlags()[2] = true;
@@ -372,19 +434,99 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
       * Clears the value of the 'quantity' field.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.OrderItem.Builder clearQuantity() {
+    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder clearQuantity() {
       fieldSetFlags()[2] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'unitPrice' field.
+      * @return The value.
+      */
+    public double getUnitPrice() {
+      return unitPrice;
+    }
+
+
+    /**
+      * Sets the value of the 'unitPrice' field.
+      * @param value The value of 'unitPrice'.
+      * @return This builder.
+      */
+    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder setUnitPrice(double value) {
+      validate(fields()[3], value);
+      this.unitPrice = value;
+      fieldSetFlags()[3] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'unitPrice' field has been set.
+      * @return True if the 'unitPrice' field has been set, false otherwise.
+      */
+    public boolean hasUnitPrice() {
+      return fieldSetFlags()[3];
+    }
+
+
+    /**
+      * Clears the value of the 'unitPrice' field.
+      * @return This builder.
+      */
+    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder clearUnitPrice() {
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'totalPrice' field.
+      * @return The value.
+      */
+    public double getTotalPrice() {
+      return totalPrice;
+    }
+
+
+    /**
+      * Sets the value of the 'totalPrice' field.
+      * @param value The value of 'totalPrice'.
+      * @return This builder.
+      */
+    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder setTotalPrice(double value) {
+      validate(fields()[4], value);
+      this.totalPrice = value;
+      fieldSetFlags()[4] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'totalPrice' field has been set.
+      * @return True if the 'totalPrice' field has been set, false otherwise.
+      */
+    public boolean hasTotalPrice() {
+      return fieldSetFlags()[4];
+    }
+
+
+    /**
+      * Clears the value of the 'totalPrice' field.
+      * @return This builder.
+      */
+    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder clearTotalPrice() {
+      fieldSetFlags()[4] = false;
       return this;
     }
 
     @Override
     @SuppressWarnings("unchecked")
-    public OrderItem build() {
+    public BudgetItem build() {
       try {
-        OrderItem record = new OrderItem();
+        BudgetItem record = new BudgetItem();
         record.name = fieldSetFlags()[0] ? this.name : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.brand = fieldSetFlags()[1] ? this.brand : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.quantity = fieldSetFlags()[2] ? this.quantity : (java.lang.Double) defaultValue(fields()[2]);
+        record.unitPrice = fieldSetFlags()[3] ? this.unitPrice : (java.lang.Double) defaultValue(fields()[3]);
+        record.totalPrice = fieldSetFlags()[4] ? this.totalPrice : (java.lang.Double) defaultValue(fields()[4]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -395,8 +537,8 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<OrderItem>
-    WRITER$ = (org.apache.avro.io.DatumWriter<OrderItem>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<BudgetItem>
+    WRITER$ = (org.apache.avro.io.DatumWriter<BudgetItem>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -404,8 +546,8 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<OrderItem>
-    READER$ = (org.apache.avro.io.DatumReader<OrderItem>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<BudgetItem>
+    READER$ = (org.apache.avro.io.DatumReader<BudgetItem>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {
@@ -423,6 +565,10 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
 
     out.writeDouble(this.quantity);
 
+    out.writeDouble(this.unitPrice);
+
+    out.writeDouble(this.totalPrice);
+
   }
 
   @Override public void customDecode(org.apache.avro.io.ResolvingDecoder in)
@@ -436,8 +582,12 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
 
       this.quantity = in.readDouble();
 
+      this.unitPrice = in.readDouble();
+
+      this.totalPrice = in.readDouble();
+
     } else {
-      for (int i = 0; i < 3; i++) {
+      for (int i = 0; i < 5; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
           this.name = in.readString(this.name instanceof Utf8 ? (Utf8)this.name : null);
@@ -449,6 +599,14 @@ public class OrderItem extends org.apache.avro.specific.SpecificRecordBase imple
 
         case 2:
           this.quantity = in.readDouble();
+          break;
+
+        case 3:
+          this.unitPrice = in.readDouble();
+          break;
+
+        case 4:
+          this.totalPrice = in.readDouble();
           break;
 
         default:
