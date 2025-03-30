@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.ajudaqui.fornecedor.kafka.entity;
+package kafka.entity;
 
 import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 8327055764814825062L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BudgetRequest\",\"namespace\":\"com.ajudaqui.fornecedor.kafka.entity\",\"fields\":[{\"name\":\"code\",\"type\":\"string\"},{\"name\":\"items\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"BudgetItem\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"brand\",\"type\":\"string\"},{\"name\":\"quantity\",\"type\":\"double\"},{\"name\":\"unitPrice\",\"type\":\"double\"},{\"name\":\"totalPrice\",\"type\":\"double\"}]}}},{\"name\":\"totalPrice\",\"type\":\"double\"},{\"name\":\"status\",\"type\":\"string\"},{\"name\":\"timestamp\",\"type\":\"string\"}]}");
+  private static final long serialVersionUID = 1231713708228870795L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BudgetRequest\",\"namespace\":\"kafka.entity\",\"fields\":[{\"name\":\"code\",\"type\":\"string\"},{\"name\":\"items\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"BudgetItem\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"brand\",\"type\":\"string\"},{\"name\":\"quantity\",\"type\":\"double\"},{\"name\":\"unitPrice\",\"type\":\"double\"},{\"name\":\"totalPrice\",\"type\":\"double\"}]}}},{\"name\":\"totalPrice\",\"type\":\"double\"},{\"name\":\"status\",\"type\":\"string\"},{\"name\":\"timestamp\",\"type\":\"string\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -72,7 +72,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
   }
 
    private java.lang.CharSequence code;
-   private java.util.List<com.ajudaqui.fornecedor.kafka.entity.BudgetItem> items;
+   private java.util.List<kafka.entity.BudgetItem> items;
    private double totalPrice;
    private java.lang.CharSequence status;
    private java.lang.CharSequence timestamp;
@@ -92,7 +92,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
    * @param status The new value for status
    * @param timestamp The new value for timestamp
    */
-  public BudgetRequest(java.lang.CharSequence code, java.util.List<com.ajudaqui.fornecedor.kafka.entity.BudgetItem> items, java.lang.Double totalPrice, java.lang.CharSequence status, java.lang.CharSequence timestamp) {
+  public BudgetRequest(java.lang.CharSequence code, java.util.List<kafka.entity.BudgetItem> items, java.lang.Double totalPrice, java.lang.CharSequence status, java.lang.CharSequence timestamp) {
     this.code = code;
     this.items = items;
     this.totalPrice = totalPrice;
@@ -119,7 +119,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: code = (java.lang.CharSequence)value$; break;
-    case 1: items = (java.util.List<com.ajudaqui.fornecedor.kafka.entity.BudgetItem>)value$; break;
+    case 1: items = (java.util.List<kafka.entity.BudgetItem>)value$; break;
     case 2: totalPrice = (java.lang.Double)value$; break;
     case 3: status = (java.lang.CharSequence)value$; break;
     case 4: timestamp = (java.lang.CharSequence)value$; break;
@@ -148,7 +148,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
    * Gets the value of the 'items' field.
    * @return The value of the 'items' field.
    */
-  public java.util.List<com.ajudaqui.fornecedor.kafka.entity.BudgetItem> getItems() {
+  public java.util.List<kafka.entity.BudgetItem> getItems() {
     return items;
   }
 
@@ -157,7 +157,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
    * Sets the value of the 'items' field.
    * @param value the value to set.
    */
-  public void setItems(java.util.List<com.ajudaqui.fornecedor.kafka.entity.BudgetItem> value) {
+  public void setItems(java.util.List<kafka.entity.BudgetItem> value) {
     this.items = value;
   }
 
@@ -216,8 +216,8 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
    * Creates a new BudgetRequest RecordBuilder.
    * @return A new BudgetRequest RecordBuilder
    */
-  public static com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder newBuilder() {
-    return new com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder();
+  public static kafka.entity.BudgetRequest.Builder newBuilder() {
+    return new kafka.entity.BudgetRequest.Builder();
   }
 
   /**
@@ -225,11 +225,11 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
    * @param other The existing builder to copy.
    * @return A new BudgetRequest RecordBuilder
    */
-  public static com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder newBuilder(com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder other) {
+  public static kafka.entity.BudgetRequest.Builder newBuilder(kafka.entity.BudgetRequest.Builder other) {
     if (other == null) {
-      return new com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder();
+      return new kafka.entity.BudgetRequest.Builder();
     } else {
-      return new com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder(other);
+      return new kafka.entity.BudgetRequest.Builder(other);
     }
   }
 
@@ -238,11 +238,11 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
    * @param other The existing instance to copy.
    * @return A new BudgetRequest RecordBuilder
    */
-  public static com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder newBuilder(com.ajudaqui.fornecedor.kafka.entity.BudgetRequest other) {
+  public static kafka.entity.BudgetRequest.Builder newBuilder(kafka.entity.BudgetRequest other) {
     if (other == null) {
-      return new com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder();
+      return new kafka.entity.BudgetRequest.Builder();
     } else {
-      return new com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder(other);
+      return new kafka.entity.BudgetRequest.Builder(other);
     }
   }
 
@@ -254,7 +254,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
     implements org.apache.avro.data.RecordBuilder<BudgetRequest> {
 
     private java.lang.CharSequence code;
-    private java.util.List<com.ajudaqui.fornecedor.kafka.entity.BudgetItem> items;
+    private java.util.List<kafka.entity.BudgetItem> items;
     private double totalPrice;
     private java.lang.CharSequence status;
     private java.lang.CharSequence timestamp;
@@ -268,7 +268,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder other) {
+    private Builder(kafka.entity.BudgetRequest.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.code)) {
         this.code = data().deepCopy(fields()[0].schema(), other.code);
@@ -296,7 +296,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
      * Creates a Builder by copying an existing BudgetRequest instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.ajudaqui.fornecedor.kafka.entity.BudgetRequest other) {
+    private Builder(kafka.entity.BudgetRequest other) {
       super(SCHEMA$);
       if (isValidValue(fields()[0], other.code)) {
         this.code = data().deepCopy(fields()[0].schema(), other.code);
@@ -334,7 +334,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'code'.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder setCode(java.lang.CharSequence value) {
+    public kafka.entity.BudgetRequest.Builder setCode(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.code = value;
       fieldSetFlags()[0] = true;
@@ -354,7 +354,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'code' field.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder clearCode() {
+    public kafka.entity.BudgetRequest.Builder clearCode() {
       code = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -364,7 +364,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
       * Gets the value of the 'items' field.
       * @return The value.
       */
-    public java.util.List<com.ajudaqui.fornecedor.kafka.entity.BudgetItem> getItems() {
+    public java.util.List<kafka.entity.BudgetItem> getItems() {
       return items;
     }
 
@@ -374,7 +374,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'items'.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder setItems(java.util.List<com.ajudaqui.fornecedor.kafka.entity.BudgetItem> value) {
+    public kafka.entity.BudgetRequest.Builder setItems(java.util.List<kafka.entity.BudgetItem> value) {
       validate(fields()[1], value);
       this.items = value;
       fieldSetFlags()[1] = true;
@@ -394,7 +394,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'items' field.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder clearItems() {
+    public kafka.entity.BudgetRequest.Builder clearItems() {
       items = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -414,7 +414,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'totalPrice'.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder setTotalPrice(double value) {
+    public kafka.entity.BudgetRequest.Builder setTotalPrice(double value) {
       validate(fields()[2], value);
       this.totalPrice = value;
       fieldSetFlags()[2] = true;
@@ -434,7 +434,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'totalPrice' field.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder clearTotalPrice() {
+    public kafka.entity.BudgetRequest.Builder clearTotalPrice() {
       fieldSetFlags()[2] = false;
       return this;
     }
@@ -453,7 +453,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'status'.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder setStatus(java.lang.CharSequence value) {
+    public kafka.entity.BudgetRequest.Builder setStatus(java.lang.CharSequence value) {
       validate(fields()[3], value);
       this.status = value;
       fieldSetFlags()[3] = true;
@@ -473,7 +473,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'status' field.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder clearStatus() {
+    public kafka.entity.BudgetRequest.Builder clearStatus() {
       status = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -493,7 +493,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'timestamp'.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder setTimestamp(java.lang.CharSequence value) {
+    public kafka.entity.BudgetRequest.Builder setTimestamp(java.lang.CharSequence value) {
       validate(fields()[4], value);
       this.timestamp = value;
       fieldSetFlags()[4] = true;
@@ -513,7 +513,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
       * Clears the value of the 'timestamp' field.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetRequest.Builder clearTimestamp() {
+    public kafka.entity.BudgetRequest.Builder clearTimestamp() {
       timestamp = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -525,7 +525,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
       try {
         BudgetRequest record = new BudgetRequest();
         record.code = fieldSetFlags()[0] ? this.code : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.items = fieldSetFlags()[1] ? this.items : (java.util.List<com.ajudaqui.fornecedor.kafka.entity.BudgetItem>) defaultValue(fields()[1]);
+        record.items = fieldSetFlags()[1] ? this.items : (java.util.List<kafka.entity.BudgetItem>) defaultValue(fields()[1]);
         record.totalPrice = fieldSetFlags()[2] ? this.totalPrice : (java.lang.Double) defaultValue(fields()[2]);
         record.status = fieldSetFlags()[3] ? this.status : (java.lang.CharSequence) defaultValue(fields()[3]);
         record.timestamp = fieldSetFlags()[4] ? this.timestamp : (java.lang.CharSequence) defaultValue(fields()[4]);
@@ -567,7 +567,7 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
     out.writeArrayStart();
     out.setItemCount(size0);
     long actualSize0 = 0;
-    for (com.ajudaqui.fornecedor.kafka.entity.BudgetItem e0: this.items) {
+    for (kafka.entity.BudgetItem e0: this.items) {
       actualSize0++;
       out.startItem();
       e0.customEncode(out);
@@ -592,17 +592,17 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
       this.code = in.readString(this.code instanceof Utf8 ? (Utf8)this.code : null);
 
       long size0 = in.readArrayStart();
-      java.util.List<com.ajudaqui.fornecedor.kafka.entity.BudgetItem> a0 = this.items;
+      java.util.List<kafka.entity.BudgetItem> a0 = this.items;
       if (a0 == null) {
-        a0 = new SpecificData.Array<com.ajudaqui.fornecedor.kafka.entity.BudgetItem>((int)size0, SCHEMA$.getField("items").schema());
+        a0 = new SpecificData.Array<kafka.entity.BudgetItem>((int)size0, SCHEMA$.getField("items").schema());
         this.items = a0;
       } else a0.clear();
-      SpecificData.Array<com.ajudaqui.fornecedor.kafka.entity.BudgetItem> ga0 = (a0 instanceof SpecificData.Array ? (SpecificData.Array<com.ajudaqui.fornecedor.kafka.entity.BudgetItem>)a0 : null);
+      SpecificData.Array<kafka.entity.BudgetItem> ga0 = (a0 instanceof SpecificData.Array ? (SpecificData.Array<kafka.entity.BudgetItem>)a0 : null);
       for ( ; 0 < size0; size0 = in.arrayNext()) {
         for ( ; size0 != 0; size0--) {
-          com.ajudaqui.fornecedor.kafka.entity.BudgetItem e0 = (ga0 != null ? ga0.peek() : null);
+          kafka.entity.BudgetItem e0 = (ga0 != null ? ga0.peek() : null);
           if (e0 == null) {
-            e0 = new com.ajudaqui.fornecedor.kafka.entity.BudgetItem();
+            e0 = new kafka.entity.BudgetItem();
           }
           e0.customDecode(in);
           a0.add(e0);
@@ -624,17 +624,17 @@ public class BudgetRequest extends org.apache.avro.specific.SpecificRecordBase i
 
         case 1:
           long size0 = in.readArrayStart();
-          java.util.List<com.ajudaqui.fornecedor.kafka.entity.BudgetItem> a0 = this.items;
+          java.util.List<kafka.entity.BudgetItem> a0 = this.items;
           if (a0 == null) {
-            a0 = new SpecificData.Array<com.ajudaqui.fornecedor.kafka.entity.BudgetItem>((int)size0, SCHEMA$.getField("items").schema());
+            a0 = new SpecificData.Array<kafka.entity.BudgetItem>((int)size0, SCHEMA$.getField("items").schema());
             this.items = a0;
           } else a0.clear();
-          SpecificData.Array<com.ajudaqui.fornecedor.kafka.entity.BudgetItem> ga0 = (a0 instanceof SpecificData.Array ? (SpecificData.Array<com.ajudaqui.fornecedor.kafka.entity.BudgetItem>)a0 : null);
+          SpecificData.Array<kafka.entity.BudgetItem> ga0 = (a0 instanceof SpecificData.Array ? (SpecificData.Array<kafka.entity.BudgetItem>)a0 : null);
           for ( ; 0 < size0; size0 = in.arrayNext()) {
             for ( ; size0 != 0; size0--) {
-              com.ajudaqui.fornecedor.kafka.entity.BudgetItem e0 = (ga0 != null ? ga0.peek() : null);
+              kafka.entity.BudgetItem e0 = (ga0 != null ? ga0.peek() : null);
               if (e0 == null) {
-                e0 = new com.ajudaqui.fornecedor.kafka.entity.BudgetItem();
+                e0 = new kafka.entity.BudgetItem();
               }
               e0.customDecode(in);
               a0.add(e0);

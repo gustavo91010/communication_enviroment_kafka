@@ -1,7 +1,7 @@
 {
     "type": "record",
     "name": "BudgetRequest",
-    "namespace": "com.ajudaqui.fornecedor.kafka.entity",
+    "namespace": "kafka.entity",
     "fields": [
       {
         "name": "code",

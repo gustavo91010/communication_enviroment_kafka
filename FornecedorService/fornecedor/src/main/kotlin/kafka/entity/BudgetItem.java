@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.ajudaqui.fornecedor.kafka.entity;
+package kafka.entity;
 
 import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -3042972178581797587L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BudgetItem\",\"namespace\":\"com.ajudaqui.fornecedor.kafka.entity\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"brand\",\"type\":\"string\"},{\"name\":\"quantity\",\"type\":\"double\"},{\"name\":\"unitPrice\",\"type\":\"double\"},{\"name\":\"totalPrice\",\"type\":\"double\"}]}");
+  private static final long serialVersionUID = 1666121072065018065L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BudgetItem\",\"namespace\":\"kafka.entity\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"brand\",\"type\":\"string\"},{\"name\":\"quantity\",\"type\":\"double\"},{\"name\":\"unitPrice\",\"type\":\"double\"},{\"name\":\"totalPrice\",\"type\":\"double\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -216,8 +216,8 @@ public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase impl
    * Creates a new BudgetItem RecordBuilder.
    * @return A new BudgetItem RecordBuilder
    */
-  public static com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder newBuilder() {
-    return new com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder();
+  public static kafka.entity.BudgetItem.Builder newBuilder() {
+    return new kafka.entity.BudgetItem.Builder();
   }
 
   /**
@@ -225,11 +225,11 @@ public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing builder to copy.
    * @return A new BudgetItem RecordBuilder
    */
-  public static com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder newBuilder(com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder other) {
+  public static kafka.entity.BudgetItem.Builder newBuilder(kafka.entity.BudgetItem.Builder other) {
     if (other == null) {
-      return new com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder();
+      return new kafka.entity.BudgetItem.Builder();
     } else {
-      return new com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder(other);
+      return new kafka.entity.BudgetItem.Builder(other);
     }
   }
 
@@ -238,11 +238,11 @@ public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing instance to copy.
    * @return A new BudgetItem RecordBuilder
    */
-  public static com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder newBuilder(com.ajudaqui.fornecedor.kafka.entity.BudgetItem other) {
+  public static kafka.entity.BudgetItem.Builder newBuilder(kafka.entity.BudgetItem other) {
     if (other == null) {
-      return new com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder();
+      return new kafka.entity.BudgetItem.Builder();
     } else {
-      return new com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder(other);
+      return new kafka.entity.BudgetItem.Builder(other);
     }
   }
 
@@ -268,7 +268,7 @@ public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase impl
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder other) {
+    private Builder(kafka.entity.BudgetItem.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.name)) {
         this.name = data().deepCopy(fields()[0].schema(), other.name);
@@ -296,7 +296,7 @@ public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase impl
      * Creates a Builder by copying an existing BudgetItem instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.ajudaqui.fornecedor.kafka.entity.BudgetItem other) {
+    private Builder(kafka.entity.BudgetItem other) {
       super(SCHEMA$);
       if (isValidValue(fields()[0], other.name)) {
         this.name = data().deepCopy(fields()[0].schema(), other.name);
@@ -334,7 +334,7 @@ public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'name'.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder setName(java.lang.CharSequence value) {
+    public kafka.entity.BudgetItem.Builder setName(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.name = value;
       fieldSetFlags()[0] = true;
@@ -354,7 +354,7 @@ public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'name' field.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder clearName() {
+    public kafka.entity.BudgetItem.Builder clearName() {
       name = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -374,7 +374,7 @@ public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'brand'.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder setBrand(java.lang.CharSequence value) {
+    public kafka.entity.BudgetItem.Builder setBrand(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.brand = value;
       fieldSetFlags()[1] = true;
@@ -394,7 +394,7 @@ public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'brand' field.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder clearBrand() {
+    public kafka.entity.BudgetItem.Builder clearBrand() {
       brand = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -414,7 +414,7 @@ public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'quantity'.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder setQuantity(double value) {
+    public kafka.entity.BudgetItem.Builder setQuantity(double value) {
       validate(fields()[2], value);
       this.quantity = value;
       fieldSetFlags()[2] = true;
@@ -434,7 +434,7 @@ public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'quantity' field.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder clearQuantity() {
+    public kafka.entity.BudgetItem.Builder clearQuantity() {
       fieldSetFlags()[2] = false;
       return this;
     }
@@ -453,7 +453,7 @@ public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'unitPrice'.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder setUnitPrice(double value) {
+    public kafka.entity.BudgetItem.Builder setUnitPrice(double value) {
       validate(fields()[3], value);
       this.unitPrice = value;
       fieldSetFlags()[3] = true;
@@ -473,7 +473,7 @@ public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'unitPrice' field.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder clearUnitPrice() {
+    public kafka.entity.BudgetItem.Builder clearUnitPrice() {
       fieldSetFlags()[3] = false;
       return this;
     }
@@ -492,7 +492,7 @@ public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'totalPrice'.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder setTotalPrice(double value) {
+    public kafka.entity.BudgetItem.Builder setTotalPrice(double value) {
       validate(fields()[4], value);
       this.totalPrice = value;
       fieldSetFlags()[4] = true;
@@ -512,7 +512,7 @@ public class BudgetItem extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'totalPrice' field.
       * @return This builder.
       */
-    public com.ajudaqui.fornecedor.kafka.entity.BudgetItem.Builder clearTotalPrice() {
+    public kafka.entity.BudgetItem.Builder clearTotalPrice() {
       fieldSetFlags()[4] = false;
       return this;
     }

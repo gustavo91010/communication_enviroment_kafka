@@ -2,7 +2,7 @@ package com.ajudaqui.fornecedor.service
 
 import com.ajudaqui.fornecedor.dto.BudgetDTO
 import com.ajudaqui.fornecedor.dto.BudgetItemDTO
-import com.ajudaqui.fornecedor.kafka.entity.Order
+import kafka.entity.Order
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.util.Random
