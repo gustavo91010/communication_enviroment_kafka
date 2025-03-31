@@ -2,31 +2,36 @@ package com.ajudaqui.fornecedor.service
 
 import com.ajudaqui.fornecedor.dto.BudgetDTO
 import com.ajudaqui.fornecedor.dto.BudgetItemDTO
-import kafka.entity.Order
+import com.ajudaqui.fornecedor.dto.OrderDTO
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.util.Random
 import org.springframework.stereotype.Service
 
 @Service
+// class FinancialService(private val producer: ProducerService) {
 class FinancialService() {
+  fun opa() = "opa!"
+  fun producerBudget(order: OrderDTO) {
 
-  fun generatedBudget(order: Order): BudgetDTO {
+    // producer.sendBudgetRequest(777L, generatedBudget(order))
+  }
+  fun generatedBudget(order: OrderDTO): BudgetDTO {
     val unitPrice = calculateUnitPrice()
     val budgetItems =
-            order.items.map { i ->
+            order.itens.map { i ->
               BudgetItemDTO(
-                      i.name.toString(),
-                      i.brand.toString(),
+                      i.name,
+                      i.brand,
                       i.quantity,
                       unitPrice,
-                      unitPrice.multiply(BigDecimal(i.quantity))
+                      unitPrice.multiply(BigDecimal(i.quantity)).setScale(2, RoundingMode.CEILING)
               )
             }
-    return BudgetDTO(order.code.toString(), budgetItems)
+    return BudgetDTO(order.orderId, budgetItems)
   }
 
-  fun calculateUnitPrice(): BigDecimal {
+  private fun calculateUnitPrice(): BigDecimal {
     val min = BigDecimal(10)
     val max = BigDecimal(100)
 

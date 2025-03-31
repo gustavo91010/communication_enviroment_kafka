@@ -8,12 +8,9 @@ import org.springframework.stereotype.Service
 @Service
 class OrderService(private val financialService: FinancialService) {
 
-  fun mapOrder(order: Order) {
+  fun tratandoOrder(order: OrderDTO) {}
 
-    print("convertendo na minha classe: ${financialService.generatedBudget(order)}")
-  }
-
-  fun generatedOrder(order: Order): OrderDTO {
+  fun mapOrder(order: Order): OrderDTO {
     val itemDTO = order.items.map { i -> Item(i.name.toString(), i.brand.toString(), i.quantity) }
     return OrderDTO(order.code.toString(), itemDTO)
   }
