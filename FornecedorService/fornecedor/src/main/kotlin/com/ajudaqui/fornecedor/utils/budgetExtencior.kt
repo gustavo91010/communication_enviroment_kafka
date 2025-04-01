@@ -1,6 +1,7 @@
 package com.ajudaqui.fornecedor.utils
 
 import com.ajudaqui.fornecedor.dto.BudgetDTO
+import java.math.BigDecimal
 import java.math.RoundingMode
 import java.time.LocalDateTime
 import kafka.entity.BudgetItem
@@ -24,14 +25,12 @@ fun BudgetDTO.mapToBudgetKafka(): BudgetRequest {
                     .build()
           }
 
-  println(
-          budgetItens.toList()
-  ) // Verifique os itens aqui para garantir que os valores estão corretos
   val totalItemPrice = budgetItens.sumOf { it.totalPrice }
+  val formatado = BigDecimal(totalItemPrice).setScale(2, RoundingMode.HALF_UP)
   return BudgetRequest.newBuilder()
           .setCode(this.orderId)
           .setItems(budgetItens.toList())
-          .setTotalPrice(totalItemPrice)
+          .setTotalPrice(formatado.toDouble())
           .setStatus("em analise")
           .setTimestamp(LocalDateTime.now().toString())
           .build()

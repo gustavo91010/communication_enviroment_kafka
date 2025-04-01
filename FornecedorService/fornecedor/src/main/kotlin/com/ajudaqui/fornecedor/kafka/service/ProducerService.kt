@@ -28,8 +28,8 @@ class ProducerService(
             financialTemplate.send(message)
 
     future.whenComplete { result, ex ->
-      ex?.also { logger.info("Evento enviada com sucesso. MessageId: $message") }
-              ?: logger.error(("deu pau..."))
+      ex?.also { logger.info("Mensagem não enviada, $it") }
+              ?: logger.error("Evento enviado com sucesso: ${message}")
     }
   }
 
