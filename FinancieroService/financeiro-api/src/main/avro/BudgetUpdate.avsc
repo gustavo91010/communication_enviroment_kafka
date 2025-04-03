@@ -1,0 +1,20 @@
+{
+    "type": "record",
+    "name": "BudgetUpdate",
+    "namespace":  "kafka.entity",
+    "fields": [
+      {
+        "name": "code",
+        "type": "string"
+      },
+      {
+        "name": "status",
+        "type": "string"
+      },
+      {
+        "name": "timestamp",
+        "type": "string"
+      }
+    ]
+  }
+  
